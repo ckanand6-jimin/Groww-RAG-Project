@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+requests
+beautifulsoup4
+transformers
+torch
+chromadb
+python-dotenv
+pydantic
+pytest
+apscheduler
