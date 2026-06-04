@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clarification Screen - Groww RAG-Based Mutual Fund FAQ Chatbot</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Hanken+Grotesk:wght@600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#001c38",
+                        "on-primary-fixed": "#001c38",
+                        "on-secondary-fixed": "#00201e",
+                        "background": "#01142a",
+                        "primary-fixed-dim": "#a6c9f9",
+                        "on-tertiary-container": "#58a7ff",
+                        "on-secondary-container": "#004a46",
+                        "surface-container-lowest": "#000f22",
+                        "on-tertiary-fixed-variant": "#004881",
+                        "tertiary-fixed": "#d3e4ff",
+                        "outline-variant": "#43474e",
+                        "on-background": "#d3e3ff",
+                        "outline": "#8d9199",
+                        "primary": "#a6c9f9",
+                        "inverse-on-surface": "#203148",
+                        "tertiary": "#a2c9ff",
+                        "on-error": "#690005",
+                        "surface-container-low": "#091c32",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#a6c9f9",
+                        "surface-container-highest": "#24364d",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#d3e3ff",
+                        "primary-container": "#133b63",
+                        "inverse-primary": "#3d608a",
+                        "error-container": "#93000a",
+                        "on-surface": "#d3e3ff",
+                        "on-secondary": "#003734",
+                        "on-primary-fixed-variant": "#244871",
+                        "tertiary-fixed-dim": "#a2c9ff",
+                        "surface-bright": "#293a51",
+                        "on-tertiary": "#00315b",
+                        "tertiary-container": "#003b6b",
+                        "secondary-container": "#02c2b8",
+                        "surface-container-high": "#192b41",
+                        "primary-fixed": "#d3e4ff",
+                        "secondary": "#44ded4",
+                        "surface-dim": "#01142a",
+                        "secondary-fixed-dim": "#40dcd1",
+                        "on-primary-container": "#83a6d4",
+                        "on-primary": "#043259",
+                        "on-surface-variant": "#c3c6cf",
+                        "on-secondary-fixed-variant": "#00504b",
+                        "surface-variant": "#24364d",
+                        "surface": "#01142a",
+                        "surface-container": "#0e2036",
+                        "secondary-fixed": "#65f8ed"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "2xl": "1rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "container-max": "1440px",
+                        "base": "8px",
+                        "lg": "48px",
+                        "xl": "64px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Inter"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(16, 39, 68, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .card-shadow {
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255,255,255,0.05);
+        }
+        .radio-custom:checked + div {
+            border-color: #44ded4;
+            background: rgba(68, 222, 212, 0.1);
+        }
+        .radio-custom:checked + div .indicator {
+            background-color: #44ded4;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg min-h-screen flex flex-col md:flex-row overflow-x-hidden selection:bg-secondary selection:text-on-secondary">
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-full md:w-[calc(100%-280px)] z-40 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10 flex justify-between items-center px-gutter py-base max-w-container-max ml-auto shadow-none">
+<div class="flex items-center gap-sm">
+<div class="font-title-md text-title-md font-bold text-primary dark:text-primary hidden sm:block">Groww RAG-Based Mutual Fund FAQ Chatbot</div>
+<div class="font-title-md text-title-md font-bold text-primary dark:text-primary sm:hidden">Groww RAG</div>
+<span class="font-label-caps text-label-caps text-secondary bg-surface-container px-2 py-1 rounded border border-outline-variant/30 flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified">verified</span> Facts-Only
+</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors active:opacity-80" data-icon="settings">settings</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors active:opacity-80" data-icon="help">help</span>
+<img alt="User Avatar" class="w-8 h-8 rounded-full border border-outline-variant/20 ml-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO6nNBWu3y4m6JUJ0Sy_ZDdDI1xfMuaGODJpxY9SqdmQOgZ2Ekv0M8KunxN0p0yXS0DbXiX0stAVf67W8TkKDwkyUpvgVA_dDU8iqdtolKOYeoHKdCroBYMTsYHJ7vZNhJlcbvfjQ3ZbPP7ZzG9uIrXa_7llEzg7JktmshbR02ZiBrgWH6oR-_BvMi18iWZQHO0QpCwWFMOmo4n_gD2YjJ80PLkUESaS4mQ73ToYEn7BBA2RMiQUL_sLoRQFvrwb2wZ4f5kpmv6cgI"/>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-full border-r border-outline-variant/20 bg-surface-container-low dark:bg-surface-container-low w-[280px] fixed left-0 top-0 shadow-md z-50">
+<div class="p-md border-b border-outline-variant/20 flex items-center gap-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="robot_2">robot_2</span>
+</div>
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-secondary dark:text-secondary">Groww RAG</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Mutual Fund FAQ</p>
+</div>
+</div>
+<div class="p-md pb-sm">
+<button class="w-full flex items-center justify-center gap-xs py-sm px-md rounded-full bg-gradient-to-r from-secondary to-primary text-background font-body-lg font-bold shadow-[0_0_15px_rgba(68,222,212,0.3)] hover:shadow-[0_0_20px_rgba(68,222,212,0.5)] transition-shadow cursor-pointer active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                New Chat
+            </button>
+</div>
+<div class="flex-1 overflow-y-auto py-sm">
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="folder_managed">folder_managed</span>
+                Supported Schemes
+            </a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+                Data Sources
+            </a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+                About
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-[280px] pt-[72px] min-h-screen flex flex-col items-center justify-center p-md md:p-xl relative">
+<!-- Background decorative elements -->
+<div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+<div class="absolute top-[20%] left-[10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-[10%] right-[10%] w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[80px]"></div>
+</div>
+<div class="w-full max-w-3xl z-10 glass-card card-shadow rounded-[24px] p-lg">
+<div class="text-center mb-xl">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-surface-container-high mb-sm shadow-[0_0_20px_rgba(166,201,249,0.1)] border border-outline-variant/30">
+<span class="material-symbols-outlined text-[32px] text-primary" data-icon="search_insights">search_insights</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Clarification Required</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto">
+                    Multiple schemes match your search for "HDFC". Please select the specific fund to continue your inquiry.
+                </p>
+</div>
+<form class="space-y-sm mb-xl">
+<!-- Option 1 -->
+<label class="relative block cursor-pointer group">
+<input class="peer sr-only radio-custom" name="scheme_selection" type="radio" value="tax_saver"/>
+<div class="flex items-center p-md rounded-xl border border-outline-variant/30 bg-surface-container-low hover:bg-surface-container-high transition-all duration-300">
+<div class="flex-1 flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-tertiary shadow-inner border border-white/5">
+<span class="material-symbols-outlined" data-icon="savings">savings</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">HDFC Tax Saver Fund</h3>
+<div class="flex items-center gap-sm mt-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container px-2 py-1 rounded">ELSS</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container px-2 py-1 rounded">Equity</span>
+</div>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant/50 flex items-center justify-center bg-surface-container-lowest transition-colors ml-sm">
+<div class="w-2.5 h-2.5 rounded-full bg-transparent transition-transform transform scale-0 indicator"></div>
+</div>
+</div>
+</label>
+<!-- Option 2 -->
+<label class="relative block cursor-pointer group">
+<input class="peer sr-only radio-custom" name="scheme_selection" type="radio" value="balanced_adv"/>
+<div class="flex items-center p-md rounded-xl border border-outline-variant/30 bg-surface-container-low hover:bg-surface-container-high transition-all duration-300">
+<div class="flex-1 flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary shadow-inner border border-white/5">
+<span class="material-symbols-outlined" data-icon="balance">balance</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">HDFC Balanced Advantage Fund</h3>
+<div class="flex items-center gap-sm mt-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container px-2 py-1 rounded">Dynamic Asset Allocation</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container px-2 py-1 rounded">Hybrid</span>
+</div>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant/50 flex items-center justify-center bg-surface-container-lowest transition-colors ml-sm">
+<div class="w-2.5 h-2.5 rounded-full bg-transparent transition-transform transform scale-0 indicator"></div>
+</div>
+</div>
+</label>
+<!-- Option 3 -->
+<label class="relative block cursor-pointer group">
+<input class="peer sr-only radio-custom" name="scheme_selection" type="radio" value="liquid"/>
+<div class="flex items-center p-md rounded-xl border border-outline-variant/30 bg-surface-container-low hover:bg-surface-container-high transition-all duration-300">
+<div class="flex-1 flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-secondary shadow-inner border border-white/5">
+<span class="material-symbols-outlined" data-icon="water_drop">water_drop</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">HDFC Liquid Fund</h3>
+<div class="flex items-center gap-sm mt-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container px-2 py-1 rounded">Liquid</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container px-2 py-1 rounded">Debt</span>
+</div>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant/50 flex items-center justify-center bg-surface-container-lowest transition-colors ml-sm">
+<div class="w-2.5 h-2.5 rounded-full bg-transparent transition-transform transform scale-0 indicator"></div>
+</div>
+</div>
+</label>
+</form>
+<div class="flex justify-end gap-sm border-t border-outline-variant/20 pt-md">
+<button class="px-md py-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button">
+                    Cancel
+                </button>
+<button class="px-xl py-sm rounded-lg bg-gradient-to-r from-secondary to-primary text-background font-title-md text-title-md font-bold shadow-[0_0_15px_rgba(68,222,212,0.2)] hover:shadow-[0_0_25px_rgba(68,222,212,0.4)] transition-all cursor-pointer active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed" type="button">
+                    Confirm Selection
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-md mt-auto bg-transparent border-t border-outline-variant/10 flat no shadows text-on-surface-variant md:pl-[280px] z-10 relative">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto text-center md:text-left gap-sm">
+<p class="font-label-caps text-label-caps">© 2024 Groww RAG Systems. Facts-only. No investment advice.</p>
+<div class="flex gap-md">
+<a class="font-label-caps text-label-caps text-on-surface-variant opacity-70 hover:text-on-surface transition-opacity" href="#">Disclaimer</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant opacity-70 hover:text-on-surface transition-opacity" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant opacity-70 hover:text-on-surface transition-opacity" href="#">Terms</a>
+</div>
+</div>
+</footer>
+</body></html>

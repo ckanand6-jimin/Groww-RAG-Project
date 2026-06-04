@@ -126,7 +126,7 @@ def _format_fallback_answer(query: str, hits: List[Dict[str, Any]]) -> Dict[str,
     top_hit = hits[0]
     text = _truncate_to_sentences(top_hit.get("document", ""), count=2)
     source_url = top_hit.get("metadata", {}).get("source_url")
-    answer = f"{text} [{source_url}]\nLast updated from sources: {LAST_UPDATED}" if source_url else f"{text}\nLast updated from sources: {LAST_UPDATED}"
+    answer = text
     return {
         "query": query,
         "answer": answer,
@@ -179,6 +179,9 @@ def answer_query(query: str) -> Dict[str, Any]:
         result["response_type"] = "FACTUAL"
 
     result["retrieval"] = retrieval
+    if retrieval.get("scheme_candidates"):
+        result["scheme_matches"] = retrieval["scheme_candidates"]
+        result["original_query"] = query
     return result
 
 

@@ -75,13 +75,23 @@ def ensure_collection(client, name: str = COLLECTION_NAME):
     return client.get_or_create_collection(name=name)
 
 
-def upsert_chunks_into_chroma(collection_name: str = COLLECTION_NAME, model_name: str = EMBEDDING_MODEL, force_refresh: bool = False):
+def upsert_chunks_into_chroma(
+    collection_name: str = COLLECTION_NAME,
+    model_name: str = EMBEDDING_MODEL,
+    force_refresh: bool = False,
+):
     client = init_chroma()
     collection = ensure_collection(client, collection_name)
     count = collection.count() if hasattr(collection, "count") else None
+
     if force_refresh and count:
-        print(f"Force refresh enabled. Clearing {count} existing vectors from collection '{collection_name}'.")
-        collection.delete()
+        print(f"Force refresh enabled. Recreating collection '{collection_name}'.")
+        try:
+            client.delete_collection(collection_name)
+        except Exception:
+            pass
+
+        collection = client.get_or_create_collection(name=collection_name)
         count = 0
 
     if count:

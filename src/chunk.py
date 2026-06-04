@@ -15,11 +15,13 @@ SECTION_FIELD_MAP = {
     "benchmark": ["benchmark"],
     "riskometer": ["riskometer"],
     "fund_management": ["fund_manager"],
+    "aum": ["aum"],
     "investment_objective": ["investment_objective"],
     "fund_house": ["amc_name"],
 }
 
 SECTION_TITLES = {
+
     "overview": "Overview",
     "expense_ratio": "Expense Ratio",
     "exit_load": "Exit Load",
@@ -27,10 +29,12 @@ SECTION_TITLES = {
     "benchmark": "Benchmark",
     "riskometer": "Riskometer",
     "fund_management": "Fund Management",
+    "aum": "Assets Under Management",
     "investment_objective": "Investment Objective",
     "fund_house": "Fund House",
     "raw_summary": "Raw Summary",
 }
+
 
 
 def normalize_text(text: Optional[str]) -> str:
@@ -55,9 +59,29 @@ def build_section_chunk(
     section_data: Dict[str, Any],
     structured_fields: Dict[str, Any],
 ) -> Optional[Dict[str, Any]]:
+
     text = normalize_text(section_data.get("text"))
+
     if is_empty_text(text):
-        return None
+        field_names = SECTION_FIELD_MAP.get(section_name, [])
+
+        fallback_values = []
+
+        for field_name in field_names:
+            value = structured_fields.get(field_name)
+
+            if value is None:
+                continue
+
+            value_str = normalize_text(str(value))
+
+            if not is_empty_text(value_str):
+                fallback_values.append(value_str)
+
+        if fallback_values:
+            text = " | ".join(fallback_values)
+        else:
+            return None
 
     title = SECTION_TITLES.get(section_name, section_name.replace("_", " ").title())
     chunk_text = text if section_name == "overview" else f"{title}: {text}"
@@ -116,6 +140,13 @@ def chunk_record(record: Dict[str, Any]) -> List[Dict[str, Any]]:
     source_url = record.get("sources", {}).get("groww_url")
     structured_fields = record.get("structured_fields") or {}
     sections = record.get("sections") or {}
+
+    # Create synthetic AUM section if missing
+    if "aum" not in sections and structured_fields.get("aum"):
+        sections["aum"] = {
+            "text": str(structured_fields.get("aum")),
+            "structured": structured_fields.get("aum"),
+        }
 
     if isinstance(sections, dict):
         for section_name, section_data in sections.items():

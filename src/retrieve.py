@@ -21,8 +21,10 @@ SECTION_KEYWORDS: Dict[str, List[str]] = {
     "benchmark": ["benchmark", "index"],
     "riskometer": ["riskometer", "risk rating", "risk"],
     "fund_management": ["fund manager", "fund management", "fund manager name"],
+    "aum": ["aum", "assets under management", "asset under management"],
     "investment_objective": ["investment objective", "objective", "purpose"],
     "fund_house": ["fund house", "amc", "asset management company", "asset manager"],
+    "documents": ["kim", "sid", "scheme information document", "key information memorandum"],
     "overview": ["overview", "summary", "about"],
 }
 
@@ -149,6 +151,18 @@ def rerank_results(results: Dict[str, Sequence[Any]], query: str, scheme_filter:
     return sorted(reranked, key=lambda item: item["score"], reverse=True)
 
 
+def extract_scheme_candidates(hits: List[Dict[str, Any]], max_candidates: int = 4) -> List[str]:
+    seen = []
+    for hit in hits:
+        scheme_id = hit.get("metadata", {}).get("scheme_id")
+        if not scheme_id or scheme_id in seen:
+            continue
+        seen.append(scheme_id)
+        if len(seen) >= max_candidates:
+            break
+    return [SCHEME_METADATA.get(s, {}).get("scheme_name", s) or s for s in seen]
+
+
 def retrieve(query: str, top_k: int = MAX_RESULTS) -> Dict[str, Any]:
     tokenizer, model, device = load_embedding_model()
     query_embedding = embed_query(query, tokenizer, model, device)
@@ -167,12 +181,16 @@ def retrieve(query: str, top_k: int = MAX_RESULTS) -> Dict[str, Any]:
     )
 
     hits = rerank_results(results, query, scheme_filter, section_filter)
+    scheme_candidates = []
+    if not scheme_filter and hits:
+        scheme_candidates = extract_scheme_candidates(hits)
     return {
         "query": query,
         "scheme_filter": scheme_filter,
         "section_filter": section_filter,
         "retrieval_count": len(hits),
         "hits": hits,
+        "scheme_candidates": scheme_candidates,
     }
 
 

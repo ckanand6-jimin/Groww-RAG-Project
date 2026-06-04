@@ -5,6 +5,7 @@ from zoneinfo import ZoneInfo
 
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.cron import CronTrigger
+from apscheduler.triggers.interval import IntervalTrigger
 
 from .chunk import main as chunk_main
 from .ingest import main as ingest_main
@@ -71,7 +72,13 @@ def refresh_corpus() -> None:
 
 def start_scheduler() -> BackgroundScheduler:
     scheduler = BackgroundScheduler(timezone=IST_ZONE)
-    trigger = CronTrigger(hour=SCHEDULE_HOUR, minute=SCHEDULE_MINUTE, timezone=IST_ZONE)
+
+    trigger = CronTrigger(
+        hour=SCHEDULE_HOUR,
+        minute=SCHEDULE_MINUTE,
+        timezone=IST_ZONE,
+    )
+
     scheduler.add_job(
         refresh_corpus,
         trigger=trigger,
@@ -79,8 +86,13 @@ def start_scheduler() -> BackgroundScheduler:
         replace_existing=True,
         max_instances=1,
     )
+
     scheduler.start()
-    _log(f"Scheduler started for daily refresh at {SCHEDULE_HOUR:02d}:{SCHEDULE_MINUTE:02d} IST.")
+
+    _log(
+        f"Scheduler started for daily refresh at {SCHEDULE_HOUR:02d}:{SCHEDULE_MINUTE:02d} IST."
+    )
+
     return scheduler
 
 

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Groww RAG-Based Mutual Fund FAQ Chatbot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/app.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-mark">G</div>
+        <div>
+          <div class="brand-title">HDFC AMC Mutual Fund FAQ</div>
+          <div class="brand-caption">Facts-only answers from official HDFC AMC, AMFI and SEBI sources.</div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <button id="newChatBtn" class="button button-primary">New Chat</button>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Recent Chats</div>
+        <ul class="sidebar-list" id="recentChats"></ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">HDFC Schemes</div>
+        <ul class="sidebar-list" id="schemeList"></ul>
+        <div class="sidebar-note">Coverage: 10 HDFC mutual fund schemes</div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Official Sources</div>
+        <ul class="sidebar-list" id="sourceList"></ul>
+      </div>
+
+      <div class="sidebar-section about-card">
+        <div class="sidebar-section-title">About</div>
+        <p class="about-copy">A portfolio-ready facts-only assistant built for HDFC mutual fund queries. No investment advice.</p>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="topbar">
+        <div>
+          <div class="main-title">Groww RAG-Based Mutual Fund FAQ Chatbot</div>
+          <div class="main-subtitle">Facts-only answers from official HDFC, AMFI and SEBI sources.</div>
+        </div>
+        <button id="sidebarToggle" class="sidebar-toggle" aria-label="Open navigation menu">☰</button>
+      </div>
+
+      <section class="chat-panel">
+        <div class="chat-header">
+          <div class="chat-label">HDFC AMC coverage</div>
+          <div class="chat-value">10 Mutual Fund Schemes supported</div>
+        </div>
+
+        <div class="message-list" id="messages"></div>
+
+        <div class="suggestion-bar" id="suggestionBar"></div>
+
+        <div class="chat-input-panel">
+          <label for="queryInput" class="sr-only">Enter your question</label>
+          <textarea id="queryInput" class="chat-input" rows="1" placeholder="Ask about expense ratios, exit loads, documents, or scheme details..."></textarea>
+          <button id="sendBtn" class="button button-accent">Send</button>
+        </div>
+        <div class="disclaimer-bar">Facts-only answers. No investment advice.</div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

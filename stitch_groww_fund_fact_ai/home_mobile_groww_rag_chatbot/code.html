@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Groww RAG-Based Mutual Fund FAQ Chatbot</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#001c38",
+                        "on-primary-fixed": "#001c38",
+                        "on-secondary-fixed": "#00201e",
+                        "background": "#01142a",
+                        "primary-fixed-dim": "#a6c9f9",
+                        "on-tertiary-container": "#58a7ff",
+                        "on-secondary-container": "#004a46",
+                        "surface-container-lowest": "#000f22",
+                        "on-tertiary-fixed-variant": "#004881",
+                        "tertiary-fixed": "#d3e4ff",
+                        "outline-variant": "#43474e",
+                        "on-background": "#d3e3ff",
+                        "outline": "#8d9199",
+                        "primary": "#a6c9f9",
+                        "inverse-on-surface": "#203148",
+                        "tertiary": "#a2c9ff",
+                        "on-error": "#690005",
+                        "surface-container-low": "#091c32",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#a6c9f9",
+                        "surface-container-highest": "#24364d",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#d3e3ff",
+                        "primary-container": "#133b63",
+                        "inverse-primary": "#3d608a",
+                        "error-container": "#93000a",
+                        "on-surface": "#d3e3ff",
+                        "on-secondary": "#003734",
+                        "on-primary-fixed-variant": "#244871",
+                        "tertiary-fixed-dim": "#a2c9ff",
+                        "surface-bright": "#293a51",
+                        "on-tertiary": "#00315b",
+                        "tertiary-container": "#003b6b",
+                        "secondary-container": "#02c2b8",
+                        "surface-container-high": "#192b41",
+                        "primary-fixed": "#d3e4ff",
+                        "secondary": "#44ded4",
+                        "surface-dim": "#01142a",
+                        "secondary-fixed-dim": "#40dcd1",
+                        "on-primary-container": "#83a6d4",
+                        "on-primary": "#043259",
+                        "on-surface-variant": "#c3c6cf",
+                        "on-secondary-fixed-variant": "#00504b",
+                        "surface-variant": "#24364d",
+                        "surface": "#01142a",
+                        "surface-container": "#0e2036",
+                        "secondary-fixed": "#65f8ed"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "container-max": "1440px",
+                        "base": "8px",
+                        "lg": "48px",
+                        "xl": "64px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Inter"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(11, 30, 52, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-input:focus-within {
+            box-shadow: 0 0 0 1px #44ded4, 0 0 15px rgba(68, 222, 212, 0.2);
+            border-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body-lg">
+<!-- Top Navigation (Mobile App Bar) -->
+<header class="flex justify-between items-center px-gutter py-base w-full z-40 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10 sticky top-0">
+<div class="flex items-center gap-sm">
+<button class="p-2 text-primary dark:text-primary hover:text-primary transition-colors cursor-pointer active:opacity-80 md:hidden rounded-full hover:bg-surface-variant" id="menu-btn">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex items-center gap-2">
+<img alt="Groww RAG Logo" class="w-8 h-8 rounded-DEFAULT object-cover" src="data:image/png;base64,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"/>
+<span class="font-title-md text-title-md font-bold text-primary dark:text-primary truncate max-w-[120px] sm:max-w-[200px]">Groww RAG-Based Mutual Fund FAQ Chatbot</span>
+<span class="font-label-caps text-label-caps text-secondary bg-surface-container-high border border-secondary/30 px-2 py-0.5 rounded-full whitespace-nowrap ml-1">Facts-Only</span>
+</div>
+</div>
+<div class="flex items-center gap-sm text-primary dark:text-primary">
+<button class="p-2 hover:text-primary transition-colors cursor-pointer active:opacity-80 rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="p-2 hover:text-primary transition-colors cursor-pointer active:opacity-80 rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</header>
+<!-- Sidebar Drawer (Hidden by default on mobile) -->
+<nav class="fixed inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out z-50 flex flex-col h-full border-r border-outline-variant/20 bg-surface-container-low dark:bg-surface-container-low w-[280px] shadow-md md:hidden" id="sidebar">
+<div class="p-md flex items-center justify-between border-b border-outline-variant/10">
+<div class="flex items-center gap-sm">
+<img alt="Groww RAG Logo" class="w-10 h-10 rounded-full object-cover" src="data:image/png;base64,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"/>
+<div>
+<h2 class="font-title-md text-title-md font-bold text-primary truncate max-w-[150px]">Groww RAG-Based Mutual Fund FAQ Chatbot</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mutual Fund Guide</p>
+</div>
+</div>
+<button class="p-1 md:hidden text-on-surface-variant hover:text-on-surface rounded-full hover:bg-surface-variant" id="close-menu-btn">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-md">
+<button class="w-full py-2 px-4 rounded-full bg-gradient-to-r from-secondary to-primary text-on-primary font-bold shadow-lg shadow-secondary/20 flex justify-center items-center gap-2 cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                New Chat
+            </button>
+</div>
+<ul class="flex flex-col mt-4 px-2 flex-grow">
+<li>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 rounded-lg mb-1" href="#">
+<span class="material-symbols-outlined">folder_managed</span>
+<span class="font-body-lg text-body-lg">Supported Schemes</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 rounded-lg mb-1" href="#">
+<span class="material-symbols-outlined">database</span>
+<span class="font-body-lg text-body-lg">Data Sources</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-md py-sm text-secondary dark:text-secondary border-l-4 border-secondary bg-surface-container-highest/50 hover:bg-surface-container-high transition-colors duration-200 rounded-lg mb-1" href="#">
+<span class="material-symbols-outlined">info</span>
+<span class="font-body-lg text-body-lg">About</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- Sidebar Overlay for Mobile -->
+<div class="fixed inset-0 bg-black/50 z-40 hidden md:hidden" id="sidebar-overlay"></div>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col items-center justify-center p-md md:p-lg max-w-3xl mx-auto w-full">
+<!-- Hero Section -->
+<div class="text-center mb-xl w-full flex flex-col items-center pt-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-secondary/30 mb-6">
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-caps text-label-caps text-secondary">FACTS-ONLY RAG</span>
+</div>
+<img alt="Groww RAG Logo" class="w-20 h-20 rounded-xl shadow-lg shadow-primary/10 mb-6 object-cover border border-outline-variant/20" src="data:image/png;base64,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"/>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary font-bold mb-4">
+                Groww RAG-Based Mutual Fund FAQ Chatbot
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mx-auto">
+                Ask questions about mutual funds, historical performance, and scheme details based on factual data.
+            </p>
+</div>
+<!-- Chat Input -->
+<div class="w-full mb-12 relative z-10">
+<div class="relative w-full rounded-2xl glass-panel glow-input transition-all duration-300">
+<input class="w-full bg-transparent border-none text-on-surface font-body-lg text-body-lg py-4 pl-4 pr-14 rounded-2xl placeholder-on-surface-variant/50 focus:ring-0" placeholder="E.g., What is the expense ratio of Axis Bluechip Fund?" type="text"/>
+<button class="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-primary-container text-on-primary-container rounded-xl hover:bg-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+<p class="text-center font-label-caps text-label-caps text-on-surface-variant/50 mt-3 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">info</span>
+                AI can make mistakes. Verify important information.
+            </p>
+</div>
+<!-- Example Questions (Bento Grid Style) -->
+<div class="w-full">
+<h3 class="font-body-sm text-body-sm text-on-surface-variant mb-4 px-2">Example Queries</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
+<button class="text-left p-4 rounded-xl glass-panel hover:bg-surface-container-high transition-colors group flex flex-col justify-between min-h-[100px]">
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">Compare the last 3 years returns of Parag Parikh Flexi Cap and HDFC Flexi Cap.</span>
+<div class="flex items-center gap-1 mt-3 text-secondary">
+<span class="material-symbols-outlined text-[16px]">monitoring</span>
+<span class="font-label-caps text-label-caps">Performance</span>
+</div>
+</button>
+<button class="text-left p-4 rounded-xl glass-panel hover:bg-surface-container-high transition-colors group flex flex-col justify-between min-h-[100px]">
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">What are the exit load conditions for SBI Small Cap Fund?</span>
+<div class="flex items-center gap-1 mt-3 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">description</span>
+<span class="font-label-caps text-label-caps">Terms</span>
+</div>
+</button>
+<button class="text-left p-4 rounded-xl glass-panel hover:bg-surface-container-high transition-colors group flex flex-col justify-between min-h-[100px] md:col-span-2">
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">List ELSS tax saving funds with an AUM greater than ₹10,000 Cr.</span>
+<div class="flex items-center gap-1 mt-3 text-primary">
+<span class="material-symbols-outlined text-[16px]">account_balance_wallet</span>
+<span class="font-label-caps text-label-caps">Discovery</span>
+</div>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto text-center md:text-left gap-sm w-full py-md mt-auto bg-surface-container-lowest border-t border-outline-variant/10 z-30">
+<p class="font-label-caps text-label-caps text-on-surface-variant opacity-70">© 2024 Fintech RAG Systems. For informational purposes only.</p>
+<div class="flex flex-col items-center">
+<span class="font-label-caps text-label-caps text-error bg-error-container/20 px-3 py-1 rounded-full border border-error/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                Facts-only. No investment advice.
+            </span>
+</div>
+<div class="flex gap-4 font-label-caps text-label-caps">
+<a class="text-on-surface-variant opacity-70 hover:text-on-surface transition-opacity cursor-default" href="#">Disclaimer</a>
+<a class="text-on-surface-variant opacity-70 hover:text-on-surface transition-opacity cursor-default" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant opacity-70 hover:text-on-surface transition-opacity cursor-default" href="#">Terms</a>
+</div>
+</footer>
+<script>
+        // Mobile Sidebar Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        menuBtn.addEventListener('click', toggleSidebar);
+        closeMenuBtn.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+    </script>
+</body></html>
