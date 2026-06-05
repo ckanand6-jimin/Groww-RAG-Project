@@ -28,6 +28,20 @@ def debug_sample():
 
     return result
 
+@app.get("/debug-query")
+def debug_query():
+    client = init_chroma()
+    collection = ensure_collection(client)
+
+    results = collection.get(
+        where={"scheme_id": "hdfc_large_cap_fund_direct_growth"}
+    )
+
+    return {
+        "count": len(results.get("ids", [])),
+        "results": results
+    }
+
 BASE_DIR = Path(__file__).resolve().parent
 STATIC_DIR = BASE_DIR / "static"
 LOG_FILE = Path(__file__).resolve().parent.parent / "data" / "logs" / "refresh.log"
