@@ -255,10 +255,10 @@ button {
 .message-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
   flex: 1;
   overflow-y: auto;
-  padding: 24px;
+  padding: 16px 24px 4px 24px;
   scroll-behavior: smooth;
 }
 
@@ -305,7 +305,7 @@ button {
 .message-content {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   flex: 1;
   min-width: 0;
 }
@@ -384,24 +384,36 @@ button {
 .suggestion-bar {
   max-width: 800px;
   width: 100%;
-  margin: 0 auto 16px auto;
+  margin: 0 auto 8px auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   gap: 8px;
-  justify-content: center;
+  justify-content: flex-start;
   flex-shrink: 0;
   padding: 0 24px;
+  scrollbar-width: none;
+}
+
+.suggestion-bar::-webkit-scrollbar {
+  display: none;
 }
 
 .suggestion-chip {
   border-radius: 18px;
-  padding: 10px 16px;
+  padding: 8px 14px;
   border: 1px solid var(--border-strong);
   background: var(--surface);
   color: var(--text);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   cursor: pointer;
   transition: transform 200ms ease, background 200ms ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.suggestion-chip:nth-child(n+5) {
+  display: none;
 }
 
 .suggestion-chip:hover {
@@ -440,7 +452,7 @@ button {
 }
 
 .disclaimer-bar {
-  margin: 8px auto 16px auto;
+  margin: 6px auto 12px auto;
   padding: 0;
   background: transparent;
   border: none;
