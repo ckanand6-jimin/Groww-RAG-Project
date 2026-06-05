@@ -126,23 +126,23 @@ def answer_query(query: str) -> Dict[str, Any]:
     if GROQ_API_KEY and hits:
         prompt = _build_prompt(query, hits)
         try:
-    answer_text = _call_groq(prompt)
+            answer_text = _call_groq(prompt)
 
-    answer_text = answer_text.replace("[", "")
-    answer_text = answer_text.replace("]", "")
+            answer_text = answer_text.replace("[", "")
+            answer_text = answer_text.replace("]", "")
 
-    source_url = hits[0].get("metadata", {}).get("source_url")
+            source_url = hits[0].get("metadata", {}).get("source_url")
 
-    result = {
-        "query": query,
-        "answer": answer_text,
-        "citation": source_url,
-        "source_url": source_url,
-        "last_updated": LAST_UPDATED,
-        "provider": "groq",
-        "response_type": "FACTUAL",
-        "hits": hits,
-        "query_type": query_type.value,
+            result = {
+                "query": query,
+                "answer": answer_text,
+                "citation": source_url,
+                "source_url": source_url,
+                "last_updated": LAST_UPDATED,
+                "provider": "groq",
+                "response_type": "FACTUAL",
+                "hits": hits,
+                "query_type": query_type.value,
     }
         except Exception as exc:
             print("GROQ ERROR:", repr(exc))
