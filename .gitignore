@@ -33,7 +33,7 @@ dist/
 *.log
 
 # Data files
-data/
+# data/
 
 # OS files
 .DS_Store

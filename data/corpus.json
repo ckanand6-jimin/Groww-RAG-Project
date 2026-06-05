@@ -1,0 +1,952 @@
+[
+  {
+    "scheme_id": "hdfc_mid_cap_fund_direct_growth",
+    "scheme_name": "HDFC Mid Cap Fund",
+    "scheme_type": "Equity",
+    "category": "Equity > Mid Cap",
+    "expense_ratio": null,
+    "minimum_investment_lump_sum": null,
+    "minimum_investment_sip": null,
+    "exit_load": null,
+    "exit_load_applicability": null,
+    "lock_in_period": null,
+    "riskometer_class": null,
+    "benchmark_index": null,
+    "fund_manager_name": null,
+    "fund_manager_experience_years": null,
+    "current_aum": null,
+    "inception_date": null,
+    "scheme_text": "HDFC Mid Cap Fund Direct Growth | Expense Ratio: 0.73 | Benchmark: NIFTY Midcap 150 TRI",
+    "sections": {
+      "overview": {
+        "text": "HDFC Mid Cap Fund Direct Growth",
+        "structured": {
+          "scheme_name": "HDFC MID CAP FUND - DIRECT PLAN - GROWTH OPTION"
+        }
+      },
+      "expense_ratio": {
+        "text": "0.73",
+        "structured": null
+      },
+      "exit_load": {
+        "text": "null",
+        "structured": null
+      },
+      "minimum_investment": {
+        "text": "null",
+        "structured": null
+      },
+      "benchmark": {
+        "text": "NIFTY Midcap 150 TRI",
+        "structured": null
+      },
+      "riskometer": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_management": {
+        "text": "null",
+        "structured": null
+      },
+      "investment_objective": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_house": {
+        "text": "HDFCMutualFund_MF",
+        "structured": null
+      }
+    },
+    "structured_fields": {
+      "scheme_name": "HDFC MID CAP FUND - DIRECT PLAN - GROWTH OPTION",
+      "amc_name": "HDFCMutualFund_MF",
+      "scheme_type": "EQUITY",
+      "category": "Equity",
+      "sub_category": "Mid Cap",
+      "expense_ratio": "0.73",
+      "benchmark": "NIFTY Midcap 150 TRI",
+      "riskometer": "Moderately High",
+      "nav": 219.077,
+      "aum": 94744.7175,
+      "minimum_sip": null,
+      "minimum_lumpsum": null,
+      "exit_load": "Exit load of 1% if redeemed within 1 year.",
+      "fund_manager": "Chirag Setalvad",
+      "investment_objective": null
+    },
+    "documents": {
+      "kim_link": "https://www.hdfcfund.com/investor-services/fund-documents/kim",
+      "sid_link": "https://www.hdfcfund.com/investor-services/fund-documents/sid",
+      "factsheet_link": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "prospectus_link": null
+    },
+    "account_services": {
+      "statement_download_link": "https://www.hdfcfund.com/services/consolidated-account-statement",
+      "statement_frequency": null,
+      "capital_gains_cert_availability": null,
+      "account_statement_process": null,
+      "online_services_link": "https://www.hdfcfund.com/information/online-services-investors"
+    },
+    "sources": {
+      "groww_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "hdfc_official_url": "https://www.hdfcfund.com/information/online-services-investors",
+      "last_updated": "2026-06-04 15:33:27",
+      "data_version": 1
+    }
+  },
+  {
+    "scheme_id": "hdfc_large_cap_fund_direct_growth",
+    "scheme_name": "HDFC Large Cap Fund",
+    "scheme_type": "Equity",
+    "category": "Equity > Large Cap",
+    "expense_ratio": null,
+    "minimum_investment_lump_sum": null,
+    "minimum_investment_sip": null,
+    "exit_load": null,
+    "exit_load_applicability": null,
+    "lock_in_period": null,
+    "riskometer_class": null,
+    "benchmark_index": null,
+    "fund_manager_name": null,
+    "fund_manager_experience_years": null,
+    "current_aum": null,
+    "inception_date": null,
+    "scheme_text": "HDFC Large Cap Fund Direct Growth | Expense Ratio: 0.99 | Benchmark: NIFTY 100 TRI",
+    "sections": {
+      "overview": {
+        "text": "HDFC Large Cap Fund Direct Growth",
+        "structured": {
+          "scheme_name": "HDFC LARGE CAP FUND - DIRECT PLAN - GROWTH OPTION"
+        }
+      },
+      "expense_ratio": {
+        "text": "0.99",
+        "structured": null
+      },
+      "exit_load": {
+        "text": "null",
+        "structured": null
+      },
+      "minimum_investment": {
+        "text": "null",
+        "structured": null
+      },
+      "benchmark": {
+        "text": "NIFTY 100 TRI",
+        "structured": null
+      },
+      "riskometer": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_management": {
+        "text": "null",
+        "structured": null
+      },
+      "investment_objective": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_house": {
+        "text": "HDFCMutualFund_MF",
+        "structured": null
+      }
+    },
+    "structured_fields": {
+      "scheme_name": "HDFC LARGE CAP FUND - DIRECT PLAN - GROWTH OPTION",
+      "amc_name": "HDFCMutualFund_MF",
+      "scheme_type": "EQUITY",
+      "category": "Equity",
+      "sub_category": "Large Cap",
+      "expense_ratio": "0.99",
+      "benchmark": "NIFTY 100 TRI",
+      "riskometer": "Moderately High Riskometer",
+      "nav": 1163.96,
+      "aum": 38121.2733,
+      "minimum_sip": null,
+      "minimum_lumpsum": null,
+      "exit_load": "Exit load of 1% if redeemed within 1 year",
+      "fund_manager": "Prashant Jain",
+      "investment_objective": null
+    },
+    "documents": {
+      "kim_link": "https://www.hdfcfund.com/investor-services/fund-documents/kim",
+      "sid_link": "https://www.hdfcfund.com/investor-services/fund-documents/sid",
+      "factsheet_link": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "prospectus_link": null
+    },
+    "account_services": {
+      "statement_download_link": "https://www.hdfcfund.com/services/consolidated-account-statement",
+      "statement_frequency": null,
+      "capital_gains_cert_availability": null,
+      "account_statement_process": null,
+      "online_services_link": "https://www.hdfcfund.com/information/online-services-investors"
+    },
+    "sources": {
+      "groww_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "hdfc_official_url": "https://www.hdfcfund.com/information/online-services-investors",
+      "last_updated": "2026-06-04 15:33:27",
+      "data_version": 1
+    }
+  },
+  {
+    "scheme_id": "hdfc_small_cap_fund_direct_growth",
+    "scheme_name": "HDFC Small Cap Fund",
+    "scheme_type": "Equity",
+    "category": "Equity > Small Cap",
+    "expense_ratio": null,
+    "minimum_investment_lump_sum": null,
+    "minimum_investment_sip": null,
+    "exit_load": null,
+    "exit_load_applicability": null,
+    "lock_in_period": null,
+    "riskometer_class": null,
+    "benchmark_index": null,
+    "fund_manager_name": null,
+    "fund_manager_experience_years": null,
+    "current_aum": null,
+    "inception_date": null,
+    "scheme_text": "HDFC Small Cap Fund Direct Growth | Expense Ratio: 0.73 | Benchmark: BSE 250 SmallCap TRI",
+    "sections": {
+      "overview": {
+        "text": "HDFC Small Cap Fund Direct Growth",
+        "structured": {
+          "scheme_name": "HDFC SMALL CAP FUND - DIRECT PLAN - GROWTH OPTION"
+        }
+      },
+      "expense_ratio": {
+        "text": "0.73",
+        "structured": null
+      },
+      "exit_load": {
+        "text": "null",
+        "structured": null
+      },
+      "minimum_investment": {
+        "text": "null",
+        "structured": null
+      },
+      "benchmark": {
+        "text": "BSE 250 SmallCap TRI",
+        "structured": null
+      },
+      "riskometer": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_management": {
+        "text": "null",
+        "structured": null
+      },
+      "investment_objective": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_house": {
+        "text": "HDFCMutualFund_MF",
+        "structured": null
+      }
+    },
+    "structured_fields": {
+      "scheme_name": "HDFC SMALL CAP FUND - DIRECT PLAN - GROWTH OPTION",
+      "amc_name": "HDFCMutualFund_MF",
+      "scheme_type": "EQUITY",
+      "category": "Equity",
+      "sub_category": "Small Cap",
+      "expense_ratio": "0.73",
+      "benchmark": "BSE 250 SmallCap TRI",
+      "riskometer": "Moderately High Riskometer",
+      "nav": 151.987,
+      "aum": 38168.1786,
+      "minimum_sip": null,
+      "minimum_lumpsum": null,
+      "exit_load": "Exit load of 1% if redeemed within 1 year",
+      "fund_manager": "Chirag Setalvad",
+      "investment_objective": null
+    },
+    "documents": {
+      "kim_link": "https://www.hdfcfund.com/investor-services/fund-documents/kim",
+      "sid_link": "https://www.hdfcfund.com/investor-services/fund-documents/sid",
+      "factsheet_link": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "prospectus_link": null
+    },
+    "account_services": {
+      "statement_download_link": "https://www.hdfcfund.com/services/consolidated-account-statement",
+      "statement_frequency": null,
+      "capital_gains_cert_availability": null,
+      "account_statement_process": null,
+      "online_services_link": "https://www.hdfcfund.com/information/online-services-investors"
+    },
+    "sources": {
+      "groww_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "hdfc_official_url": "https://www.hdfcfund.com/information/online-services-investors",
+      "last_updated": "2026-06-04 15:33:27",
+      "data_version": 1
+    }
+  },
+  {
+    "scheme_id": "hdfc_equity_fund_direct_growth",
+    "scheme_name": "HDFC Equity Fund",
+    "scheme_type": "Equity",
+    "category": "Equity > Diversified",
+    "expense_ratio": null,
+    "minimum_investment_lump_sum": null,
+    "minimum_investment_sip": null,
+    "exit_load": null,
+    "exit_load_applicability": null,
+    "lock_in_period": null,
+    "riskometer_class": null,
+    "benchmark_index": null,
+    "fund_manager_name": null,
+    "fund_manager_experience_years": null,
+    "current_aum": null,
+    "inception_date": null,
+    "scheme_text": "HDFC Flexi Cap Direct Plan Growth | Expense Ratio: 0.68 | Benchmark: NIFTY 500 TRI",
+    "sections": {
+      "overview": {
+        "text": "HDFC Flexi Cap Direct Plan Growth",
+        "structured": {
+          "scheme_name": "HDFC FLEXICAP FUND - DIRECT PLAN - GROWTH OPTION"
+        }
+      },
+      "expense_ratio": {
+        "text": "0.68",
+        "structured": null
+      },
+      "exit_load": {
+        "text": "null",
+        "structured": null
+      },
+      "minimum_investment": {
+        "text": "null",
+        "structured": null
+      },
+      "benchmark": {
+        "text": "NIFTY 500 TRI",
+        "structured": null
+      },
+      "riskometer": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_management": {
+        "text": "null",
+        "structured": null
+      },
+      "investment_objective": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_house": {
+        "text": "HDFCMutualFund_MF",
+        "structured": null
+      }
+    },
+    "structured_fields": {
+      "scheme_name": "HDFC FLEXICAP FUND - DIRECT PLAN - GROWTH OPTION",
+      "amc_name": "HDFCMutualFund_MF",
+      "scheme_type": "EQUITY",
+      "category": "Equity",
+      "sub_category": "Flexi Cap",
+      "expense_ratio": "0.68",
+      "benchmark": "NIFTY 500 TRI",
+      "riskometer": "Moderately High",
+      "nav": 2115.535,
+      "aum": 100479.2308,
+      "minimum_sip": null,
+      "minimum_lumpsum": null,
+      "exit_load": "Exit load of 1% if redeemed within 1 year\r\n",
+      "fund_manager": "Prashant Jain",
+      "investment_objective": null
+    },
+    "documents": {
+      "kim_link": "https://www.hdfcfund.com/investor-services/fund-documents/kim",
+      "sid_link": "https://www.hdfcfund.com/investor-services/fund-documents/sid",
+      "factsheet_link": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "prospectus_link": null
+    },
+    "account_services": {
+      "statement_download_link": "https://www.hdfcfund.com/services/consolidated-account-statement",
+      "statement_frequency": null,
+      "capital_gains_cert_availability": null,
+      "account_statement_process": null,
+      "online_services_link": "https://www.hdfcfund.com/information/online-services-investors"
+    },
+    "sources": {
+      "groww_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "hdfc_official_url": "https://www.hdfcfund.com/information/online-services-investors",
+      "last_updated": "2026-06-04 15:33:28",
+      "data_version": 1
+    }
+  },
+  {
+    "scheme_id": "hdfc_elss_tax_saver_fund_direct_plan_growth",
+    "scheme_name": "HDFC ELSS Tax Saver Fund",
+    "scheme_type": "ELSS",
+    "category": "Equity > ELSS",
+    "expense_ratio": null,
+    "minimum_investment_lump_sum": null,
+    "minimum_investment_sip": null,
+    "exit_load": null,
+    "exit_load_applicability": null,
+    "lock_in_period": null,
+    "riskometer_class": null,
+    "benchmark_index": null,
+    "fund_manager_name": null,
+    "fund_manager_experience_years": null,
+    "current_aum": null,
+    "inception_date": null,
+    "scheme_text": "HDFC ELSS Tax Saver Fund Direct Plan Growth | Expense Ratio: 1.11 | Benchmark: NIFTY 500 TRI",
+    "sections": {
+      "overview": {
+        "text": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+        "structured": {
+          "scheme_name": "HDFC ELSS TAX SAVER - DIRECT PLAN - GROWTH OPTION"
+        }
+      },
+      "expense_ratio": {
+        "text": "1.11",
+        "structured": null
+      },
+      "exit_load": {
+        "text": "null",
+        "structured": null
+      },
+      "minimum_investment": {
+        "text": "null",
+        "structured": null
+      },
+      "benchmark": {
+        "text": "NIFTY 500 TRI",
+        "structured": null
+      },
+      "riskometer": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_management": {
+        "text": "null",
+        "structured": null
+      },
+      "investment_objective": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_house": {
+        "text": "HDFCMutualFund_MF",
+        "structured": null
+      }
+    },
+    "structured_fields": {
+      "scheme_name": "HDFC ELSS TAX SAVER - DIRECT PLAN - GROWTH OPTION",
+      "amc_name": "HDFCMutualFund_MF",
+      "scheme_type": "ELSS",
+      "category": "Equity",
+      "sub_category": "ELSS",
+      "expense_ratio": "1.11",
+      "benchmark": "NIFTY 500 TRI",
+      "riskometer": "Moderately High",
+      "nav": 1421.343,
+      "aum": 15559.4894,
+      "minimum_sip": null,
+      "minimum_lumpsum": null,
+      "exit_load": "Nil",
+      "fund_manager": "Vinay Kulkarni",
+      "investment_objective": null
+    },
+    "documents": {
+      "kim_link": "https://www.hdfcfund.com/investor-services/fund-documents/kim",
+      "sid_link": "https://www.hdfcfund.com/investor-services/fund-documents/sid",
+      "factsheet_link": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "prospectus_link": null
+    },
+    "account_services": {
+      "statement_download_link": "https://www.hdfcfund.com/services/consolidated-account-statement",
+      "statement_frequency": null,
+      "capital_gains_cert_availability": null,
+      "account_statement_process": null,
+      "online_services_link": "https://www.hdfcfund.com/information/online-services-investors"
+    },
+    "sources": {
+      "groww_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "hdfc_official_url": "https://www.hdfcfund.com/information/online-services-investors",
+      "last_updated": "2026-06-04 15:33:28",
+      "data_version": 1
+    }
+  },
+  {
+    "scheme_id": "hdfc_balanced_advantage_fund_direct_growth",
+    "scheme_name": "HDFC Balanced Advantage Fund",
+    "scheme_type": "Hybrid",
+    "category": "Hybrid > Dynamic Asset Allocation",
+    "expense_ratio": null,
+    "minimum_investment_lump_sum": null,
+    "minimum_investment_sip": null,
+    "exit_load": null,
+    "exit_load_applicability": null,
+    "lock_in_period": null,
+    "riskometer_class": null,
+    "benchmark_index": null,
+    "fund_manager_name": null,
+    "fund_manager_experience_years": null,
+    "current_aum": null,
+    "inception_date": null,
+    "scheme_text": "HDFC Balanced Advantage Fund Direct Growth | Expense Ratio: 0.75 | Benchmark: NIFTY 50 Hybrid Composite Debt 50:50 Index",
+    "sections": {
+      "overview": {
+        "text": "HDFC Balanced Advantage Fund Direct Growth",
+        "structured": {
+          "scheme_name": "HDFC BALANCED ADVANTAGE FUND - DIRECT PLAN - GROWTH OPTION"
+        }
+      },
+      "expense_ratio": {
+        "text": "0.75",
+        "structured": null
+      },
+      "exit_load": {
+        "text": "null",
+        "structured": null
+      },
+      "minimum_investment": {
+        "text": "null",
+        "structured": null
+      },
+      "benchmark": {
+        "text": "NIFTY 50 Hybrid Composite Debt 50:50 Index",
+        "structured": null
+      },
+      "riskometer": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_management": {
+        "text": "null",
+        "structured": null
+      },
+      "investment_objective": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_house": {
+        "text": "HDFCMutualFund_MF",
+        "structured": null
+      }
+    },
+    "structured_fields": {
+      "scheme_name": "HDFC BALANCED ADVANTAGE FUND - DIRECT PLAN - GROWTH OPTION",
+      "amc_name": "HDFCMutualFund_MF",
+      "scheme_type": "HYBRID (NC)",
+      "category": "Hybrid",
+      "sub_category": "Dynamic Asset Allocation",
+      "expense_ratio": "0.75",
+      "benchmark": "NIFTY 50 Hybrid Composite Debt 50:50 Index",
+      "riskometer": "Moderately High Riskometer",
+      "nav": 549.062,
+      "aum": 105377.6508,
+      "minimum_sip": null,
+      "minimum_lumpsum": null,
+      "exit_load": "Exit Load for units in excess of 15% of the investment,1% will be charged for redemption within 1 year.",
+      "fund_manager": "Srinivas Rao Ravuri",
+      "investment_objective": null
+    },
+    "documents": {
+      "kim_link": "https://www.hdfcfund.com/investor-services/fund-documents/kim",
+      "sid_link": "https://www.hdfcfund.com/investor-services/fund-documents/sid",
+      "factsheet_link": "https://groww.in/mutual-funds/hdfc-balanced-advantage-fund-direct-growth",
+      "prospectus_link": null
+    },
+    "account_services": {
+      "statement_download_link": "https://www.hdfcfund.com/services/consolidated-account-statement",
+      "statement_frequency": null,
+      "capital_gains_cert_availability": null,
+      "account_statement_process": null,
+      "online_services_link": "https://www.hdfcfund.com/information/online-services-investors"
+    },
+    "sources": {
+      "groww_url": "https://groww.in/mutual-funds/hdfc-balanced-advantage-fund-direct-growth",
+      "hdfc_official_url": "https://www.hdfcfund.com/information/online-services-investors",
+      "last_updated": "2026-06-04 15:33:28",
+      "data_version": 1
+    }
+  },
+  {
+    "scheme_id": "hdfc_nifty_50_index_fund_direct_growth",
+    "scheme_name": "HDFC Nifty 50 Index Fund",
+    "scheme_type": "Index",
+    "category": "Equity > Index",
+    "expense_ratio": null,
+    "minimum_investment_lump_sum": null,
+    "minimum_investment_sip": null,
+    "exit_load": null,
+    "exit_load_applicability": null,
+    "lock_in_period": null,
+    "riskometer_class": null,
+    "benchmark_index": null,
+    "fund_manager_name": null,
+    "fund_manager_experience_years": null,
+    "current_aum": null,
+    "inception_date": null,
+    "scheme_text": "HDFC NIFTY 50 Index Fund Direct Growth | Expense Ratio: 0.26 | Benchmark: NIFTY 50 TRI",
+    "sections": {
+      "overview": {
+        "text": "HDFC NIFTY 50 Index Fund Direct Growth",
+        "structured": {
+          "scheme_name": "HDFC NIFTY 50 INDEX FUND - DIRECT PLAN - GROWTH"
+        }
+      },
+      "expense_ratio": {
+        "text": "0.26",
+        "structured": null
+      },
+      "exit_load": {
+        "text": "null",
+        "structured": null
+      },
+      "minimum_investment": {
+        "text": "null",
+        "structured": null
+      },
+      "benchmark": {
+        "text": "NIFTY 50 TRI",
+        "structured": null
+      },
+      "riskometer": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_management": {
+        "text": "null",
+        "structured": null
+      },
+      "investment_objective": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_house": {
+        "text": "HDFCMutualFund_MF",
+        "structured": null
+      }
+    },
+    "structured_fields": {
+      "scheme_name": "HDFC NIFTY 50 INDEX FUND - DIRECT PLAN - GROWTH",
+      "amc_name": "HDFCMutualFund_MF",
+      "scheme_type": "EQUITY",
+      "category": "Equity",
+      "sub_category": "Large Cap",
+      "expense_ratio": "0.26",
+      "benchmark": "NIFTY 50 TRI",
+      "riskometer": "Moderately High Riskometer",
+      "nav": 227.8602,
+      "aum": 23339.5619,
+      "minimum_sip": null,
+      "minimum_lumpsum": null,
+      "exit_load": "Exit load of 0.25% if redeemed within 3 days",
+      "fund_manager": "Krishan Daga",
+      "investment_objective": null
+    },
+    "documents": {
+      "kim_link": "https://www.hdfcfund.com/investor-services/fund-documents/kim",
+      "sid_link": "https://www.hdfcfund.com/investor-services/fund-documents/sid",
+      "factsheet_link": "https://groww.in/mutual-funds/hdfc-nifty-50-index-fund-direct-growth",
+      "prospectus_link": null
+    },
+    "account_services": {
+      "statement_download_link": "https://www.hdfcfund.com/services/consolidated-account-statement",
+      "statement_frequency": null,
+      "capital_gains_cert_availability": null,
+      "account_statement_process": null,
+      "online_services_link": "https://www.hdfcfund.com/information/online-services-investors"
+    },
+    "sources": {
+      "groww_url": "https://groww.in/mutual-funds/hdfc-nifty-50-index-fund-direct-growth",
+      "hdfc_official_url": "https://www.hdfcfund.com/information/online-services-investors",
+      "last_updated": "2026-06-04 15:33:28",
+      "data_version": 1
+    }
+  },
+  {
+    "scheme_id": "hdfc_defence_fund_direct_growth",
+    "scheme_name": "HDFC Defence Fund",
+    "scheme_type": "Equity",
+    "category": "Equity > Sectoral",
+    "expense_ratio": null,
+    "minimum_investment_lump_sum": null,
+    "minimum_investment_sip": null,
+    "exit_load": null,
+    "exit_load_applicability": null,
+    "lock_in_period": null,
+    "riskometer_class": null,
+    "benchmark_index": null,
+    "fund_manager_name": null,
+    "fund_manager_experience_years": null,
+    "current_aum": null,
+    "inception_date": null,
+    "scheme_text": "HDFC Defence Fund Direct Growth | Expense Ratio: 0.83 | Benchmark: Nifty India Defence TRI",
+    "sections": {
+      "overview": {
+        "text": "HDFC Defence Fund Direct Growth",
+        "structured": {
+          "scheme_name": "HDFC DEFENCE FUND DIRECT PLAN GROWTH"
+        }
+      },
+      "expense_ratio": {
+        "text": "0.83",
+        "structured": null
+      },
+      "exit_load": {
+        "text": "null",
+        "structured": null
+      },
+      "minimum_investment": {
+        "text": "null",
+        "structured": null
+      },
+      "benchmark": {
+        "text": "Nifty India Defence TRI",
+        "structured": null
+      },
+      "riskometer": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_management": {
+        "text": "null",
+        "structured": null
+      },
+      "investment_objective": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_house": {
+        "text": "HDFCMutualFund_MF",
+        "structured": null
+      }
+    },
+    "structured_fields": {
+      "scheme_name": "HDFC DEFENCE FUND DIRECT PLAN GROWTH",
+      "amc_name": "HDFCMutualFund_MF",
+      "scheme_type": "EQUITY",
+      "category": "Equity",
+      "sub_category": "Thematic",
+      "expense_ratio": "0.83",
+      "benchmark": "Nifty India Defence TRI",
+      "riskometer": "Very High",
+      "nav": 28.625,
+      "aum": 9123.6053,
+      "minimum_sip": null,
+      "minimum_lumpsum": null,
+      "exit_load": "Exit load of 1%, if redeemed within 1 year.",
+      "fund_manager": "Dhruv Muchhal",
+      "investment_objective": null
+    },
+    "documents": {
+      "kim_link": "https://www.hdfcfund.com/investor-services/fund-documents/kim",
+      "sid_link": "https://www.hdfcfund.com/investor-services/fund-documents/sid",
+      "factsheet_link": "https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth",
+      "prospectus_link": null
+    },
+    "account_services": {
+      "statement_download_link": "https://www.hdfcfund.com/services/consolidated-account-statement",
+      "statement_frequency": null,
+      "capital_gains_cert_availability": null,
+      "account_statement_process": null,
+      "online_services_link": "https://www.hdfcfund.com/information/online-services-investors"
+    },
+    "sources": {
+      "groww_url": "https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth",
+      "hdfc_official_url": "https://www.hdfcfund.com/information/online-services-investors",
+      "last_updated": "2026-06-04 15:33:28",
+      "data_version": 1
+    }
+  },
+  {
+    "scheme_id": "hdfc_gold_etf_fund_of_fund_direct_plan_growth",
+    "scheme_name": "HDFC Gold ETF Fund of Fund",
+    "scheme_type": "Commodity",
+    "category": "ETFs > Gold",
+    "expense_ratio": null,
+    "minimum_investment_lump_sum": null,
+    "minimum_investment_sip": null,
+    "exit_load": null,
+    "exit_load_applicability": null,
+    "lock_in_period": null,
+    "riskometer_class": null,
+    "benchmark_index": null,
+    "fund_manager_name": null,
+    "fund_manager_experience_years": null,
+    "current_aum": null,
+    "inception_date": null,
+    "scheme_text": "HDFC Gold ETF Fund of Fund Direct Plan Growth | Expense Ratio: 0.2 | Benchmark: Domestic Price of Gold",
+    "sections": {
+      "overview": {
+        "text": "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+        "structured": {
+          "scheme_name": "HDFC GOLD ETF FUND OF FUND  - DIRECT PLAN - GROWTH OPTION"
+        }
+      },
+      "expense_ratio": {
+        "text": "0.2",
+        "structured": null
+      },
+      "exit_load": {
+        "text": "null",
+        "structured": null
+      },
+      "minimum_investment": {
+        "text": "null",
+        "structured": null
+      },
+      "benchmark": {
+        "text": "Domestic Price of Gold",
+        "structured": null
+      },
+      "riskometer": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_management": {
+        "text": "null",
+        "structured": null
+      },
+      "investment_objective": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_house": {
+        "text": "HDFCMutualFund_MF",
+        "structured": null
+      }
+    },
+    "structured_fields": {
+      "scheme_name": "HDFC GOLD ETF FUND OF FUND  - DIRECT PLAN - GROWTH OPTION",
+      "amc_name": "HDFCMutualFund_MF",
+      "scheme_type": "FOF",
+      "category": "Commodities",
+      "sub_category": "Gold",
+      "expense_ratio": "0.2",
+      "benchmark": "Domestic Price of Gold",
+      "riskometer": "Moderately High Riskometer",
+      "nav": 48.1706,
+      "aum": 11464.3532,
+      "minimum_sip": null,
+      "minimum_lumpsum": null,
+      "exit_load": "Exit load of 1%, if redeemed within 15 days.",
+      "fund_manager": "Krishan Daga",
+      "investment_objective": null
+    },
+    "documents": {
+      "kim_link": "https://www.hdfcfund.com/investor-services/fund-documents/kim",
+      "sid_link": "https://www.hdfcfund.com/investor-services/fund-documents/sid",
+      "factsheet_link": "https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "prospectus_link": null
+    },
+    "account_services": {
+      "statement_download_link": "https://www.hdfcfund.com/services/consolidated-account-statement",
+      "statement_frequency": null,
+      "capital_gains_cert_availability": null,
+      "account_statement_process": null,
+      "online_services_link": "https://www.hdfcfund.com/information/online-services-investors"
+    },
+    "sources": {
+      "groww_url": "https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "hdfc_official_url": "https://www.hdfcfund.com/information/online-services-investors",
+      "last_updated": "2026-06-04 15:33:28",
+      "data_version": 1
+    }
+  },
+  {
+    "scheme_id": "hdfc_liquid_fund_direct_growth",
+    "scheme_name": "HDFC Liquid Fund",
+    "scheme_type": "Debt",
+    "category": "Debt > Liquid",
+    "expense_ratio": null,
+    "minimum_investment_lump_sum": null,
+    "minimum_investment_sip": null,
+    "exit_load": null,
+    "exit_load_applicability": null,
+    "lock_in_period": null,
+    "riskometer_class": null,
+    "benchmark_index": null,
+    "fund_manager_name": null,
+    "fund_manager_experience_years": null,
+    "current_aum": null,
+    "inception_date": null,
+    "scheme_text": "HDFC Liquid Direct Plan Growth | Expense Ratio: 0.2 | Benchmark: CRISIL Liquid Debt A-I Index",
+    "sections": {
+      "overview": {
+        "text": "HDFC Liquid Direct Plan Growth",
+        "structured": {
+          "scheme_name": "HDFC LIQUID FUND - DIRECT PLAN - GROWTH OPTION"
+        }
+      },
+      "expense_ratio": {
+        "text": "0.2",
+        "structured": null
+      },
+      "exit_load": {
+        "text": "null",
+        "structured": null
+      },
+      "minimum_investment": {
+        "text": "null",
+        "structured": null
+      },
+      "benchmark": {
+        "text": "CRISIL Liquid Debt A-I Index",
+        "structured": null
+      },
+      "riskometer": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_management": {
+        "text": "null",
+        "structured": null
+      },
+      "investment_objective": {
+        "text": "null",
+        "structured": null
+      },
+      "fund_house": {
+        "text": "HDFCMutualFund_MF",
+        "structured": null
+      }
+    },
+    "structured_fields": {
+      "scheme_name": "HDFC LIQUID FUND - DIRECT PLAN - GROWTH OPTION",
+      "amc_name": "HDFCMutualFund_MF",
+      "scheme_type": "LIQUID",
+      "category": "Debt",
+      "sub_category": "Liquid",
+      "expense_ratio": "0.2",
+      "benchmark": "CRISIL Liquid Debt A-I Index",
+      "riskometer": "Low",
+      "nav": 5475.7034,
+      "aum": 72872.5607,
+      "minimum_sip": null,
+      "minimum_lumpsum": null,
+      "exit_load": "Exit load of 0.0070% if redeemed within 1 day, 0.0065% if redeemed within 2 days, 0.0060% if redeemed within 3 days, 0.0055% if redeemed within 4 days, 0.0050% if redeemed within 5 days, 0.0045% if redeemed within 6 days.",
+      "fund_manager": "Anupam Joshi",
+      "investment_objective": null
+    },
+    "documents": {
+      "kim_link": "https://www.hdfcfund.com/investor-services/fund-documents/kim",
+      "sid_link": "https://www.hdfcfund.com/investor-services/fund-documents/sid",
+      "factsheet_link": "https://groww.in/mutual-funds/hdfc-liquid-fund-direct-growth",
+      "prospectus_link": null
+    },
+    "account_services": {
+      "statement_download_link": "https://www.hdfcfund.com/services/consolidated-account-statement",
+      "statement_frequency": null,
+      "capital_gains_cert_availability": null,
+      "account_statement_process": null,
+      "online_services_link": "https://www.hdfcfund.com/information/online-services-investors"
+    },
+    "sources": {
+      "groww_url": "https://groww.in/mutual-funds/hdfc-liquid-fund-direct-growth",
+      "hdfc_official_url": "https://www.hdfcfund.com/information/online-services-investors",
+      "last_updated": "2026-06-04 15:33:28",
+      "data_version": 1
+    }
+  }
+]
