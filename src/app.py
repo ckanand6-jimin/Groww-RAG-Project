@@ -5,9 +5,19 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
 from .rag import answer_query
+from .vector_db import init_chroma, ensure_collection
 
 app = FastAPI()
 
+@app.get("/debug-chroma")
+def debug_chroma():
+    client = init_chroma()
+    collection = ensure_collection(client)
+
+    return {
+        "collection": collection.name,
+        "count": collection.count()
+    }
 BASE_DIR = Path(__file__).resolve().parent
 STATIC_DIR = BASE_DIR / "static"
 LOG_FILE = Path(__file__).resolve().parent.parent / "data" / "logs" / "refresh.log"
