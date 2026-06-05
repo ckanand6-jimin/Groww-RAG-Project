@@ -45,12 +45,15 @@ def _build_context(hits: List[Dict[str, Any]]) -> str:
 
 def _build_prompt(query: str, hits: List[Dict[str, Any]]) -> str:
     instruction = (
-        "You are a facts-only mutual fund assistant. Answer the user query using only the provided source excerpts. "
-        "Do not hallucinate, do not provide investment advice, and do not introduce new information. "
-        "Use exactly one citation in square brackets with the source URL. "
-        "Keep the answer to 1-3 sentences. "
-        f"Append 'Last updated from sources: {LAST_UPDATED}' at the end."
-    )
+    "You are a facts-only mutual fund assistant. "
+    "Answer the user query using only the provided source excerpts. "
+    "Do not hallucinate. "
+    "Do not provide investment advice. "
+    "Do not introduce new information. "
+    "Keep the answer to 1-3 sentences. "
+    "Do NOT include source URLs or citations in the answer text. "
+    "End with: Last updated from sources: YYYY-MM-DD."
+)
     context = _build_context(hits)
     prompt = (
         f"{instruction}\n\n"
@@ -123,19 +126,24 @@ def answer_query(query: str) -> Dict[str, Any]:
     if GROQ_API_KEY and hits:
         prompt = _build_prompt(query, hits)
         try:
-            answer_text = _call_groq(prompt)
-            source_url = hits[0].get("metadata", {}).get("source_url")
-            result = {
-                "query": query,
-                "answer": answer_text,
-                "citation": source_url,
-                "source_url": source_url,
-                "last_updated": LAST_UPDATED,
-                "provider": "groq",
-                "response_type": "FACTUAL",
-                "hits": hits,
-                "query_type": query_type.value,
-            }
+    answer_text = _call_groq(prompt)
+
+    answer_text = answer_text.replace("[", "")
+    answer_text = answer_text.replace("]", "")
+
+    source_url = hits[0].get("metadata", {}).get("source_url")
+
+    result = {
+        "query": query,
+        "answer": answer_text,
+        "citation": source_url,
+        "source_url": source_url,
+        "last_updated": LAST_UPDATED,
+        "provider": "groq",
+        "response_type": "FACTUAL",
+        "hits": hits,
+        "query_type": query_type.value,
+    }
         except Exception as exc:
             print("GROQ ERROR:", repr(exc))
 
