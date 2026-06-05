@@ -18,6 +18,16 @@ def debug_chroma():
         "collection": collection.name,
         "count": collection.count()
     }
+
+@app.get("/debug-sample")
+def debug_sample():
+    client = init_chroma()
+    collection = ensure_collection(client)
+
+    result = collection.get(limit=5)
+
+    return result
+
 BASE_DIR = Path(__file__).resolve().parent
 STATIC_DIR = BASE_DIR / "static"
 LOG_FILE = Path(__file__).resolve().parent.parent / "data" / "logs" / "refresh.log"
