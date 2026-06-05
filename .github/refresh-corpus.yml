@@ -1,0 +1,33 @@
+name: Refresh Corpus
+
+on:
+  schedule:
+    - cron: "30 4 * * *"
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Ingestion
+        run: python -m src.ingest
+
+      - name: Run Chunking
+        run: python -m src.chunk
+
+      - name: Refresh Chroma
+        run: |
+          python -c "from src.vector_db import upsert_chunks_into_chroma; upsert_chunks_into_chroma(force_refresh=True)"

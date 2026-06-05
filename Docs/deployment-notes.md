@@ -1,51 +1,148 @@
-# Local Deployment Notes
+# Deployment Plan – Groww RAG Mutual Fund Assistant
 
-## Start Application
+## Architecture
 
-Activate environment:
+Frontend:
 
-```powershell
-.venv\Scripts\activate
-```
+* Static HTML/CSS/JS UI
+* Hosted on Vercel
 
-Run backend:
+Backend:
 
-```powershell
+* FastAPI
+* Hosted on Railway
+
+Vector Store:
+
+* ChromaDB
+
+Embeddings:
+
+* BAAI/bge-small-en-v1.5
+
+LLM:
+
+* Groq API
+
+Scheduler:
+
+* GitHub Actions
+* Daily refresh at 10:00 AM IST
+
+---
+
+## Environment Variables
+
+Backend
+
+GROQ_API_KEY=
+GROQ_MODEL=
+CHROMA_COLLECTION=mutual_fund_chunks
+EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
+ENABLE_SCHEDULER=0
+
+---
+
+## GitHub Actions Scheduler
+
+Workflow File
+
+.github/workflows/refresh-corpus.yml
+
+Schedule
+
+10:00 AM IST
+04:30 UTC
+
+Responsibilities
+
+* Run ingestion
+* Run chunking
+* Refresh embeddings
+* Update Chroma collection
+
+---
+
+## Railway Deployment
+
+Create Railway Project
+
+Connect GitHub Repository
+
+Repository
+
+Groww-RAG-Project
+
+Start Command
+
+uvicorn src.app:app --host 0.0.0.0 --port $PORT
+
+Add Environment Variables
+
+Deploy
+
+Verify
+
+/health
+/query
+/refresh-status
+
+---
+
+## Vercel Deployment
+
+Import GitHub Repository
+
+Framework
+
+Other
+
+Frontend Directory
+
+src/static
+
+Environment Variable
+
+BACKEND_URL=<railway-url>
+
+Deploy
+
+Verify
+
+Chat UI loads
+Queries reach backend
+Source links work
+
+---
+
+## Local Testing Checklist
+
+Backend starts successfully
+
 uvicorn src.app:app --reload
-```
 
-Open:
+Frontend loads
 
-```text
 http://127.0.0.1:8000
-```
 
-## Rebuild Corpus
+Tests pass
 
-```powershell
-python -m src.ingest
-python -m src.chunk
-python -m src.embed
-```
-
-Refresh Chroma:
-
-```powershell
-python -c "from src.vector_db import upsert_chunks_into_chroma; upsert_chunks_into_chroma(force_refresh=True)"
-```
-
-## Run Tests
-
-```powershell
 python -m pytest -v
-```
 
-## Scheduler
+Scheduler logs generated
 
-Enable:
+data/logs/refresh.log
 
-```env
-ENABLE_SCHEDULER=1
-```
+---
 
-Runs daily refresh at 10:00 AM.
+## Production Verification
+
+Factual query returns source-backed answer
+
+Advisory query returns refusal response
+
+Refresh status endpoint operational
+
+Scheduler executes daily corpus refresh
+
+Frontend communicates with backend successfully
