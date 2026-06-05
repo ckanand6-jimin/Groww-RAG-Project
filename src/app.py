@@ -5,47 +5,8 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
 from .rag import answer_query
-from .vector_db import init_chroma, ensure_collection
 
 app = FastAPI()
-
-@app.get("/debug-chroma")
-def debug_chroma():
-    client = init_chroma()
-    collection = ensure_collection(client)
-
-    return {
-        "collection": collection.name,
-        "count": collection.count()
-    }
-
-@app.get("/debug-sample")
-def debug_sample():
-    client = init_chroma()
-    collection = ensure_collection(client)
-
-    result = collection.get(limit=5)
-
-    return result
-
-@app.get("/debug-query")
-def debug_query():
-    client = init_chroma()
-    collection = ensure_collection(client)
-
-    results = collection.get(
-        where={"scheme_id": "hdfc_large_cap_fund_direct_growth"}
-    )
-
-    return {
-        "count": len(results.get("ids", [])),
-        "results": results
-    }
-@app.get("/debug-search")
-def debug_search():
-    from .retrieve import retrieve
-
-    return retrieve("HDFC Large Cap Fund")
 
 BASE_DIR = Path(__file__).resolve().parent
 STATIC_DIR = BASE_DIR / "static"
