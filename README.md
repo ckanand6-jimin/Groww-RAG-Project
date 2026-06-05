@@ -2,18 +2,41 @@
 
 A facts-only Retrieval-Augmented Generation (RAG) chatbot built for HDFC Mutual Fund schemes using ChromaDB, Groq LLM, and official mutual fund source documents.
 
-## Project Overview
+---
 
-This project answers factual mutual fund questions using a curated corpus sourced from:
+# Project Overview
 
-* HDFC Mutual Fund
-* AMFI
-* SEBI
-* Groww
+This project provides facts-only answers about selected HDFC Mutual Fund schemes using information retrieved from official public sources.
 
-The system supports retrieval-based question answering and refuses investment advice queries.
+The chatbot uses Retrieval-Augmented Generation (RAG) and refuses investment advice or recommendation-based questions.
 
-## Features
+## Covered Schemes
+
+1. HDFC Large Cap Fund
+2. HDFC Mid Cap Fund
+3. HDFC Small Cap Fund
+4. HDFC Equity Fund
+5. HDFC ELSS Tax Saver Fund
+6. HDFC Balanced Advantage Fund
+7. HDFC Nifty 50 Index Fund
+8. HDFC Defence Fund
+9. HDFC Gold ETF Fund of Fund
+10. HDFC Liquid Fund
+
+## Source Corpus
+
+The corpus contains information collected from:
+
+* HDFC Mutual Fund official documents
+* HDFC KIM documents
+* HDFC SID documents
+* AMFI investor education resources
+* SEBI investor education resources
+* Groww mutual fund scheme pages
+
+---
+
+# Features
 
 * Facts-only mutual fund assistant
 * Query classification
@@ -24,7 +47,9 @@ The system supports retrieval-based question answering and refuses investment ad
 * Scheduled corpus refresh
 * Automated testing suite
 
-## Supported Queries
+---
+
+# Supported Queries
 
 Examples:
 
@@ -35,7 +60,7 @@ Examples:
 * Who is the fund manager of HDFC Large Cap Fund?
 * What is the exit load of HDFC Small Cap Fund?
 
-## Unsupported Queries
+# Unsupported Queries
 
 Examples:
 
@@ -71,7 +96,9 @@ Groq LLM
 
 Answer + Source Attribution
 
-## Project Structure
+---
+
+# Project Structure
 
 ```text
 src/
@@ -99,20 +126,22 @@ data/
 Docs/
 ├── architecture.md
 ├── context.md
-├── implementation-plan-v2.md
-├── edge-case.md
-
+├── sources.md
+├── sample_qa.md
+├── disclaimer.md
 ```
 
-## Setup
+---
 
-### Create Virtual Environment
+# Setup
+
+## Create Virtual Environment
 
 ```bash
 python -m venv .venv
 ```
 
-### Activate Environment
+## Activate Environment
 
 Windows:
 
@@ -120,7 +149,7 @@ Windows:
 .venv\Scripts\activate
 ```
 
-### Install Dependencies
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -160,12 +189,26 @@ Open:
 http://127.0.0.1:8000
 ```
 
-## Scheduler
+---
+
+# Deployment
+
+## Railway Backend
+
+Production URL:
+
+https://groww-rag-project-production.up.railway.app
+
+The application is deployed on Railway and serves the chatbot UI and FastAPI backend.
+
+---
+
+# Scheduler
 
 The scheduler refreshes the corpus daily at:
 
 ```text
-10:00 AM
+10:00 AM IST
 ```
 
 Enable scheduler:
@@ -174,7 +217,9 @@ Enable scheduler:
 ENABLE_SCHEDULER=1
 ```
 
-## Testing
+---
+
+# Testing
 
 Run all tests:
 
@@ -188,7 +233,9 @@ Current Status:
 8 tests passed
 ```
 
-## Evaluation Summary
+---
+
+# Evaluation Summary
 
 Validated modules:
 
@@ -198,7 +245,20 @@ Validated modules:
 * Refusal Handling
 * Scheduler Integration
 
-## Disclaimer
+---
+
+# Known Limitations
+
+* Supports only the selected HDFC Mutual Fund schemes included in the corpus.
+* Answers depend on the information available in the indexed source documents.
+* Some fields such as minimum SIP amount, capital gains certificate download process, or other operational details may not be available for all schemes.
+* The chatbot does not calculate returns or compare scheme performance.
+* The chatbot does not provide investment advice, recommendations, or portfolio suggestions.
+* Responses are limited to retrieved source information and may refuse questions outside the corpus scope.
+
+---
+
+# Disclaimer
 
 This project provides factual mutual fund information only.
 
