@@ -41,6 +41,11 @@ def debug_query():
         "count": len(results.get("ids", [])),
         "results": results
     }
+@app.get("/debug-search")
+def debug_search():
+    from .retrieve import retrieve
+
+    return retrieve("HDFC Large Cap Fund")
 
 BASE_DIR = Path(__file__).resolve().parent
 STATIC_DIR = BASE_DIR / "static"
